@@ -1,0 +1,13 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Tracker{% endblock %}
+{% block body %}This is Tracker Page {% endblock %}
+{% block js %}
+<script>
+    var cart = JSON.parse(localStorage.getItem("cart"));
+    let sum=0;
+    for (item in cart) {
+      sum=sum+cart[item][0]
+    }
+     document.getElementById("cart").innerHTML=sum;
+</script>
+{% endblock %}
